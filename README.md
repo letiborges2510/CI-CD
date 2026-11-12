@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🔐 API de Login — FATEC
 
 API REST desenvolvida em **Java + Spring Boot** para gerenciamento de usuários e autenticação, utilizando **Spring Security, JWT e MongoDB**.
@@ -776,3 +777,6 @@ Projeto desenvolvido no contexto acadêmico da:
 ## 📄 Licença
 
 Este projeto possui finalidade acadêmica e educacional.
+=======
+CI-CD
+>>>>>>> 77c215811f0a1399ff352a5ec350f1e108b091d1
