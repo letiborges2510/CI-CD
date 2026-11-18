@@ -48,12 +48,9 @@ jobs:
              ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 
   # ---------------------- JOB 2: DEPLOY ----------------------
-  deploy:
+   deploy:
     runs-on: ubuntu-latest
     needs: build
-    steps:
-      - name: Avisar o Render para fazer o deploy
-        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
     steps:
       - name: Disparar novo deploy no Render
         run: curl -fsS -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
