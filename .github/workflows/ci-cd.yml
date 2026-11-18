@@ -20,8 +20,8 @@ jobs:
 
       - name: Gerar arquivo de build com a data atual
         run: |
-          mkdir -p springframework/src/main/resources/static
-          echo "Build em $(date -u +'%d/%m/%Y %H:%M:%S') UTC - commit ${{ github.sha }}" | tee springframework/src/main/resources/static/build-info.txt
+          mkdir -p src/main/resources/static
+          echo "Build em $(date -u +'%d/%m/%Y %H:%M:%S') UTC - commit ${{ github.sha }}" | tee src/main/resources/static/build-info.txt
 
       - name: Configurar Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -35,8 +35,8 @@ jobs:
       - name: Build (GraalVM, amd64) e push para o Docker Hub
         uses: docker/build-push-action@v6
         with:
-          context: ./springframework
-          file: ./springframework/Dockerfile
+          context: .
+          file: ./Dockerfile
           platforms: linux/amd64
           push: true
           tags: |
